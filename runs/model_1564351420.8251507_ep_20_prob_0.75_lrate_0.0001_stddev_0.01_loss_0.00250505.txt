@@ -1,0 +1,221 @@
+./runs/model_1564351420.8251507_ep_20_prob_0.75_lrate_0.0001_stddev_0.01.txt
+Loss: 1.24732, Images: 32/289 11.07% done per epoch
+Loss: 1.11557, Images: 64/289 22.15% done per epoch
+Loss: 0.918013, Images: 96/289 33.22% done per epoch
+Loss: 0.901007, Images: 128/289 44.29% done per epoch
+Loss: 0.838105, Images: 160/289 55.36% done per epoch
+Loss: 0.791796, Images: 192/289 66.44% done per epoch
+Loss: 0.76519, Images: 224/289 77.51% done per epoch
+Loss: 0.750025, Images: 256/289 88.58% done per epoch
+Loss: 0.735878, Images: 288/289 99.65% done per epoch
+Loss: 0.713547, Images: 289/289 100.00% done per epoch
+Epoch = 1 / 20 Tot loss = 0.0303684
+Loss: 0.704239, Images: 32/289 11.07% done per epoch
+Loss: 0.692472, Images: 64/289 22.15% done per epoch
+Loss: 0.685129, Images: 96/289 33.22% done per epoch
+Loss: 0.678644, Images: 128/289 44.29% done per epoch
+Loss: 0.672613, Images: 160/289 55.36% done per epoch
+Loss: 0.664836, Images: 192/289 66.44% done per epoch
+Loss: 0.652773, Images: 224/289 77.51% done per epoch
+Loss: 0.649201, Images: 256/289 88.58% done per epoch
+Loss: 0.634375, Images: 288/289 99.65% done per epoch
+Loss: 0.611489, Images: 289/289 100.00% done per epoch
+Epoch = 2 / 20 Tot loss = 0.0229957
+Loss: 0.618987, Images: 32/289 11.07% done per epoch
+Loss: 0.610014, Images: 64/289 22.15% done per epoch
+Loss: 0.59681, Images: 96/289 33.22% done per epoch
+Loss: 0.599541, Images: 128/289 44.29% done per epoch
+Loss: 0.572909, Images: 160/289 55.36% done per epoch
+Loss: 0.561596, Images: 192/289 66.44% done per epoch
+Loss: 0.54423, Images: 224/289 77.51% done per epoch
+Loss: 0.529742, Images: 256/289 88.58% done per epoch
+Loss: 0.515336, Images: 288/289 99.65% done per epoch
+Loss: 0.477465, Images: 289/289 100.00% done per epoch
+Epoch = 3 / 20 Tot loss = 0.0194693
+Loss: 0.481522, Images: 32/289 11.07% done per epoch
+Loss: 0.470994, Images: 64/289 22.15% done per epoch
+Loss: 0.467657, Images: 96/289 33.22% done per epoch
+Loss: 0.440832, Images: 128/289 44.29% done per epoch
+Loss: 0.420169, Images: 160/289 55.36% done per epoch
+Loss: 0.40381, Images: 192/289 66.44% done per epoch
+Loss: 0.383955, Images: 224/289 77.51% done per epoch
+Loss: 0.374741, Images: 256/289 88.58% done per epoch
+Loss: 0.361124, Images: 288/289 99.65% done per epoch
+Loss: 0.290813, Images: 289/289 100.00% done per epoch
+Epoch = 4 / 20 Tot loss = 0.0141717
+Loss: 0.331799, Images: 32/289 11.07% done per epoch
+Loss: 0.3181, Images: 64/289 22.15% done per epoch
+Loss: 0.293558, Images: 96/289 33.22% done per epoch
+Loss: 0.285733, Images: 128/289 44.29% done per epoch
+Loss: 0.287138, Images: 160/289 55.36% done per epoch
+Loss: 0.278658, Images: 192/289 66.44% done per epoch
+Loss: 0.230481, Images: 224/289 77.51% done per epoch
+Loss: 0.222214, Images: 256/289 88.58% done per epoch
+Loss: 0.217623, Images: 288/289 99.65% done per epoch
+Loss: 0.267006, Images: 289/289 100.00% done per epoch
+Epoch = 5 / 20 Tot loss = 0.00945436
+Loss: 0.187568, Images: 32/289 11.07% done per epoch
+Loss: 0.219361, Images: 64/289 22.15% done per epoch
+Loss: 0.234337, Images: 96/289 33.22% done per epoch
+Loss: 0.214177, Images: 128/289 44.29% done per epoch
+Loss: 0.241396, Images: 160/289 55.36% done per epoch
+Loss: 0.182211, Images: 192/289 66.44% done per epoch
+Loss: 0.174857, Images: 224/289 77.51% done per epoch
+Loss: 0.239367, Images: 256/289 88.58% done per epoch
+Loss: 0.178916, Images: 288/289 99.65% done per epoch
+Loss: 0.256628, Images: 289/289 100.00% done per epoch
+Epoch = 6 / 20 Tot loss = 0.00736615
+Loss: 0.227228, Images: 32/289 11.07% done per epoch
+Loss: 0.221618, Images: 64/289 22.15% done per epoch
+Loss: 0.191414, Images: 96/289 33.22% done per epoch
+Loss: 0.157876, Images: 128/289 44.29% done per epoch
+Loss: 0.158762, Images: 160/289 55.36% done per epoch
+Loss: 0.192563, Images: 192/289 66.44% done per epoch
+Loss: 0.176976, Images: 224/289 77.51% done per epoch
+Loss: 0.165557, Images: 256/289 88.58% done per epoch
+Loss: 0.171492, Images: 288/289 99.65% done per epoch
+Loss: 0.249364, Images: 289/289 100.00% done per epoch
+Epoch = 7 / 20 Tot loss = 0.00661886
+Loss: 0.170044, Images: 32/289 11.07% done per epoch
+Loss: 0.153125, Images: 64/289 22.15% done per epoch
+Loss: 0.147256, Images: 96/289 33.22% done per epoch
+Loss: 0.161355, Images: 128/289 44.29% done per epoch
+Loss: 0.169743, Images: 160/289 55.36% done per epoch
+Loss: 0.126728, Images: 192/289 66.44% done per epoch
+Loss: 0.14616, Images: 224/289 77.51% done per epoch
+Loss: 0.144225, Images: 256/289 88.58% done per epoch
+Loss: 0.140596, Images: 288/289 99.65% done per epoch
+Loss: 0.195886, Images: 289/289 100.00% done per epoch
+Epoch = 8 / 20 Tot loss = 0.00538103
+Loss: 0.143109, Images: 32/289 11.07% done per epoch
+Loss: 0.140988, Images: 64/289 22.15% done per epoch
+Loss: 0.138568, Images: 96/289 33.22% done per epoch
+Loss: 0.138903, Images: 128/289 44.29% done per epoch
+Loss: 0.152662, Images: 160/289 55.36% done per epoch
+Loss: 0.128027, Images: 192/289 66.44% done per epoch
+Loss: 0.138786, Images: 224/289 77.51% done per epoch
+Loss: 0.145902, Images: 256/289 88.58% done per epoch
+Loss: 0.142763, Images: 288/289 99.65% done per epoch
+Loss: 0.0907718, Images: 289/289 100.00% done per epoch
+Epoch = 9 / 20 Tot loss = 0.00470754
+Loss: 0.126275, Images: 32/289 11.07% done per epoch
+Loss: 0.138124, Images: 64/289 22.15% done per epoch
+Loss: 0.150776, Images: 96/289 33.22% done per epoch
+Loss: 0.133902, Images: 128/289 44.29% done per epoch
+Loss: 0.119785, Images: 160/289 55.36% done per epoch
+Loss: 0.149965, Images: 192/289 66.44% done per epoch
+Loss: 0.13582, Images: 224/289 77.51% done per epoch
+Loss: 0.129548, Images: 256/289 88.58% done per epoch
+Loss: 0.121068, Images: 288/289 99.65% done per epoch
+Loss: 0.142717, Images: 289/289 100.00% done per epoch
+Epoch = 10 / 20 Tot loss = 0.00466429
+Loss: 0.131742, Images: 32/289 11.07% done per epoch
+Loss: 0.119237, Images: 64/289 22.15% done per epoch
+Loss: 0.142467, Images: 96/289 33.22% done per epoch
+Loss: 0.118563, Images: 128/289 44.29% done per epoch
+Loss: 0.116278, Images: 160/289 55.36% done per epoch
+Loss: 0.122167, Images: 192/289 66.44% done per epoch
+Loss: 0.122595, Images: 224/289 77.51% done per epoch
+Loss: 0.124462, Images: 256/289 88.58% done per epoch
+Loss: 0.131208, Images: 288/289 99.65% done per epoch
+Loss: 0.129933, Images: 289/289 100.00% done per epoch
+Epoch = 11 / 20 Tot loss = 0.0043552
+Loss: 0.102416, Images: 32/289 11.07% done per epoch
+Loss: 0.124858, Images: 64/289 22.15% done per epoch
+Loss: 0.13587, Images: 96/289 33.22% done per epoch
+Loss: 0.123381, Images: 128/289 44.29% done per epoch
+Loss: 0.140092, Images: 160/289 55.36% done per epoch
+Loss: 0.137931, Images: 192/289 66.44% done per epoch
+Loss: 0.108105, Images: 224/289 77.51% done per epoch
+Loss: 0.101251, Images: 256/289 88.58% done per epoch
+Loss: 0.116783, Images: 288/289 99.65% done per epoch
+Loss: 0.0973028, Images: 289/289 100.00% done per epoch
+Epoch = 12 / 20 Tot loss = 0.00411069
+Loss: 0.105507, Images: 32/289 11.07% done per epoch
+Loss: 0.108186, Images: 64/289 22.15% done per epoch
+Loss: 0.106465, Images: 96/289 33.22% done per epoch
+Loss: 0.126553, Images: 128/289 44.29% done per epoch
+Loss: 0.109751, Images: 160/289 55.36% done per epoch
+Loss: 0.0991613, Images: 192/289 66.44% done per epoch
+Loss: 0.108468, Images: 224/289 77.51% done per epoch
+Loss: 0.10803, Images: 256/289 88.58% done per epoch
+Loss: 0.112455, Images: 288/289 99.65% done per epoch
+Loss: 0.0810328, Images: 289/289 100.00% done per epoch
+Epoch = 13 / 20 Tot loss = 0.00368723
+Loss: 0.10036, Images: 32/289 11.07% done per epoch
+Loss: 0.123792, Images: 64/289 22.15% done per epoch
+Loss: 0.116386, Images: 96/289 33.22% done per epoch
+Loss: 0.109868, Images: 128/289 44.29% done per epoch
+Loss: 0.112178, Images: 160/289 55.36% done per epoch
+Loss: 0.103557, Images: 192/289 66.44% done per epoch
+Loss: 0.0991727, Images: 224/289 77.51% done per epoch
+Loss: 0.114893, Images: 256/289 88.58% done per epoch
+Loss: 0.0966139, Images: 288/289 99.65% done per epoch
+Loss: 0.0813457, Images: 289/289 100.00% done per epoch
+Epoch = 14 / 20 Tot loss = 0.00366148
+Loss: 0.0914447, Images: 32/289 11.07% done per epoch
+Loss: 0.0954961, Images: 64/289 22.15% done per epoch
+Loss: 0.111322, Images: 96/289 33.22% done per epoch
+Loss: 0.121652, Images: 128/289 44.29% done per epoch
+Loss: 0.113988, Images: 160/289 55.36% done per epoch
+Loss: 0.0888524, Images: 192/289 66.44% done per epoch
+Loss: 0.0943507, Images: 224/289 77.51% done per epoch
+Loss: 0.0916239, Images: 256/289 88.58% done per epoch
+Loss: 0.0978671, Images: 288/289 99.65% done per epoch
+Loss: 0.159743, Images: 289/289 100.00% done per epoch
+Epoch = 15 / 20 Tot loss = 0.00368976
+Loss: 0.0962889, Images: 32/289 11.07% done per epoch
+Loss: 0.0891436, Images: 64/289 22.15% done per epoch
+Loss: 0.101879, Images: 96/289 33.22% done per epoch
+Loss: 0.0909455, Images: 128/289 44.29% done per epoch
+Loss: 0.0966128, Images: 160/289 55.36% done per epoch
+Loss: 0.106171, Images: 192/289 66.44% done per epoch
+Loss: 0.112095, Images: 224/289 77.51% done per epoch
+Loss: 0.100327, Images: 256/289 88.58% done per epoch
+Loss: 0.0961064, Images: 288/289 99.65% done per epoch
+Loss: 0.0763749, Images: 289/289 100.00% done per epoch
+Epoch = 16 / 20 Tot loss = 0.00334237
+Loss: 0.0818185, Images: 32/289 11.07% done per epoch
+Loss: 0.102392, Images: 64/289 22.15% done per epoch
+Loss: 0.0862527, Images: 96/289 33.22% done per epoch
+Loss: 0.0840795, Images: 128/289 44.29% done per epoch
+Loss: 0.0935299, Images: 160/289 55.36% done per epoch
+Loss: 0.0989371, Images: 192/289 66.44% done per epoch
+Loss: 0.0776848, Images: 224/289 77.51% done per epoch
+Loss: 0.0862993, Images: 256/289 88.58% done per epoch
+Loss: 0.0768405, Images: 288/289 99.65% done per epoch
+Loss: 0.0683069, Images: 289/289 100.00% done per epoch
+Epoch = 17 / 20 Tot loss = 0.00296243
+Loss: 0.0756604, Images: 32/289 11.07% done per epoch
+Loss: 0.0902961, Images: 64/289 22.15% done per epoch
+Loss: 0.0867349, Images: 96/289 33.22% done per epoch
+Loss: 0.0687348, Images: 128/289 44.29% done per epoch
+Loss: 0.0855541, Images: 160/289 55.36% done per epoch
+Loss: 0.0843292, Images: 192/289 66.44% done per epoch
+Loss: 0.085162, Images: 224/289 77.51% done per epoch
+Loss: 0.0753151, Images: 256/289 88.58% done per epoch
+Loss: 0.0876182, Images: 288/289 99.65% done per epoch
+Loss: 0.0433525, Images: 289/289 100.00% done per epoch
+Epoch = 18 / 20 Tot loss = 0.0027085
+Loss: 0.0767397, Images: 32/289 11.07% done per epoch
+Loss: 0.0744185, Images: 64/289 22.15% done per epoch
+Loss: 0.071548, Images: 96/289 33.22% done per epoch
+Loss: 0.0768586, Images: 128/289 44.29% done per epoch
+Loss: 0.078824, Images: 160/289 55.36% done per epoch
+Loss: 0.0770214, Images: 192/289 66.44% done per epoch
+Loss: 0.102663, Images: 224/289 77.51% done per epoch
+Loss: 0.0813742, Images: 256/289 88.58% done per epoch
+Loss: 0.0662878, Images: 288/289 99.65% done per epoch
+Loss: 0.0657046, Images: 289/289 100.00% done per epoch
+Epoch = 19 / 20 Tot loss = 0.00266934
+Loss: 0.0646006, Images: 32/289 11.07% done per epoch
+Loss: 0.0849309, Images: 64/289 22.15% done per epoch
+Loss: 0.0846619, Images: 96/289 33.22% done per epoch
+Loss: 0.0771998, Images: 128/289 44.29% done per epoch
+Loss: 0.0720188, Images: 160/289 55.36% done per epoch
+Loss: 0.0761858, Images: 192/289 66.44% done per epoch
+Loss: 0.0802926, Images: 224/289 77.51% done per epoch
+Loss: 0.0735627, Images: 256/289 88.58% done per epoch
+Loss: 0.0618431, Images: 288/289 99.65% done per epoch
+Loss: 0.0486645, Images: 289/289 100.00% done per epoch
+Epoch = 20 / 20 Tot loss = 0.00250505
