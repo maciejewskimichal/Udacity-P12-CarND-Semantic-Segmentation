@@ -55,14 +55,16 @@ def layers(vgg_layer3_out, vgg_layer4_out, vgg_layer7_out, num_classes, stddev=0
     :param stdev: truncated normal stddev
     :return: The Tensor for the last layer of output
     """
-    layer7_conv      = tf.layers.conv2d(          vgg_layer7_out                   , num_classes, 1   , padding='same', kernel_initializer=tf.truncated_normal_initializer(stddev=stddev))
-    layer7_deconv    = tf.layers.conv2d_transpose(layer7_conv                      , num_classes, 4, 2, padding='same', kernel_initializer=tf.truncated_normal_initializer(stddev=stddev))
-    layer4_conv      = tf.layers.conv2d(          vgg_layer4_out                   , num_classes, 1   , padding='same', kernel_initializer=tf.truncated_normal_initializer(stddev=stddev))
-    layer4_deconv    = tf.layers.conv2d_transpose(tf.add(layer7_deconv,layer4_conv), num_classes, 4, 2, padding='same', kernel_initializer=tf.truncated_normal_initializer(stddev=stddev))
-    layer3_conv      = tf.layers.conv2d(          vgg_layer3_out                   , num_classes, 1   , padding='same', kernel_initializer=tf.truncated_normal_initializer(stddev=stddev))
-    layer_out_deconv = tf.layers.conv2d_transpose(tf.add(layer4_deconv,layer3_conv), num_classes,16, 8, padding='same', kernel_initializer=tf.truncated_normal_initializer(stddev=stddev))
+    kern_init = tf.truncated_normal_initializer(stddev=stddev)
+    kern_reg  = tf.contrib.layers.l2_regularizer(1e-3)
+    layer7_conv      = tf.layers.conv2d(          vgg_layer7_out                   , num_classes, 1   , padding='same', kernel_initializer=kern_init, kernel_regularizer=kern_reg)
+    layer7_deconv    = tf.layers.conv2d_transpose(layer7_conv                      , num_classes, 4, 2, padding='same', kernel_initializer=kern_init, kernel_regularizer=kern_reg)
+    layer4_conv      = tf.layers.conv2d(          vgg_layer4_out                   , num_classes, 1   , padding='same', kernel_initializer=kern_init, kernel_regularizer=kern_reg)
+    layer4_deconv    = tf.layers.conv2d_transpose(tf.add(layer7_deconv,layer4_conv), num_classes, 4, 2, padding='same', kernel_initializer=kern_init, kernel_regularizer=kern_reg)
+    layer3_conv      = tf.layers.conv2d(          vgg_layer3_out                   , num_classes, 1   , padding='same', kernel_initializer=kern_init, kernel_regularizer=kern_reg)
+    layer_out        = tf.layers.conv2d_transpose(tf.add(layer4_deconv,layer3_conv), num_classes,16, 8, padding='same', kernel_initializer=kern_init, kernel_regularizer=kern_reg)
     
-    return layer_out_deconv
+    return layer_out
 
 tests.test_layers(layers)
 
@@ -80,9 +82,14 @@ def optimize(nn_last_layer, correct_label, learning_rate, num_classes):
     labels             = tf.reshape(correct_label, (-1, num_classes))
     
     cross_entropy_loss = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(logits=logits, labels=labels))
+    
+    # loss added from regularization
+    l2_loss            = tf.losses.get_regularization_loss()
+    loss               = tf.reduce_mean(cross_entropy_loss + (0.01 * l2_loss))
+    
     train_op           = tf.train.AdamOptimizer(learning_rate).minimize(cross_entropy_loss)
     
-    return logits, train_op, cross_entropy_loss
+    return logits, train_op, loss
 tests.test_optimize(optimize)
 
 
