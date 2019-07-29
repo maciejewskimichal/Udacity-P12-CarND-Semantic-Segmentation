@@ -49,26 +49,26 @@ learning_rate_val = 0.0001
 truncated_normal_stddev=0.01
 regularizer not used
 
-Epoch = 1 /20 Loss = 0.0313111
-Epoch = 2 /20 Loss = 0.0239016
-Epoch = 3 /20 Loss = 0.0212975
-Epoch = 4 /20 Loss = 0.0165934
-Epoch = 5 /20 Loss = 0.0113107
-Epoch = 6 /20 Loss = 0.00814866
-Epoch = 7 /20 Loss = 0.00651643
-Epoch = 8 /20 Loss = 0.00672304
-Epoch = 9 /20 Loss = 0.00592527
-Epoch = 10/20 Loss = 0.00547108
-Epoch = 11/20 Loss = 0.00471787
-Epoch = 12/20 Loss = 0.00475233
-Epoch = 13/20 Loss = 0.00479306
-Epoch = 14/20 Loss = 0.00399876
-Epoch = 15/20 Loss = 0.00388238
-Epoch = 16/20 Loss = 0.00381149
-Epoch = 17/20 Loss = 0.0042731
-Epoch = 18/20 Loss = 0.00407425
-Epoch = 19/20 Loss = 0.00355994
-Epoch = 20/20 Loss = 0.00346907
+Epoch = 1 /20 Loss = 0.031
+Epoch = 2 /20 Loss = 0.024
+Epoch = 3 /20 Loss = 0.021
+Epoch = 4 /20 Loss = 0.017
+Epoch = 5 /20 Loss = 0.011
+Epoch = 6 /20 Loss = 0.0081
+Epoch = 7 /20 Loss = 0.0065
+Epoch = 8 /20 Loss = 0.0067
+Epoch = 9 /20 Loss = 0.0059
+Epoch = 10/20 Loss = 0.0055
+Epoch = 11/20 Loss = 0.0047
+Epoch = 12/20 Loss = 0.0048
+Epoch = 13/20 Loss = 0.0048
+Epoch = 14/20 Loss = 0.0040
+Epoch = 15/20 Loss = 0.0039
+Epoch = 16/20 Loss = 0.0038
+Epoch = 17/20 Loss = 0.0043
+Epoch = 18/20 Loss = 0.0040
+Epoch = 19/20 Loss = 0.0036
+Epoch = 20/20 Loss = 0.0035
 ```
 Some examples of segmentation:
 
@@ -96,24 +96,24 @@ learning_rate_val = 0.0001
 truncated_normal_stddev=0.01
 regularizer used
 
-Epoch = 1 /50 Loss = 0.126532
-Epoch = 2 /50 Loss = 0.0387358
-Epoch = 3 /50 Loss = 0.0336458
-Epoch = 4 /50 Loss = 0.0266071
-Epoch = 5 /50 Loss = 0.0225733
-Epoch = 6 /50 Loss = 0.0208974
-Epoch = 7 /50 Loss = 0.0181564
-Epoch = 8 /50 Loss = 0.0153333
-Epoch = 9 /50 Loss = 0.0161906
-Epoch = 10/50 Loss = 0.0143521
-Epoch = 15/50 Loss = 0.0106265
-Epoch = 20/50 Loss = 0.010997
-Epoch = 25/50 Loss = 0.00765995
-Epoch = 30/50 Loss = 0.00681202
-Epoch = 35/50 Loss = 0.00614292
-Epoch = 40/50 Loss = 0.00591604
-Epoch = 45/50 Loss = 0.00526914
-Epoch = 50/50 Loss = 0.00486118
+Epoch = 1 /50 Loss = 0.127
+Epoch = 2 /50 Loss = 0.039
+Epoch = 3 /50 Loss = 0.034
+Epoch = 4 /50 Loss = 0.027
+Epoch = 5 /50 Loss = 0.023
+Epoch = 6 /50 Loss = 0.021
+Epoch = 7 /50 Loss = 0.018
+Epoch = 8 /50 Loss = 0.015
+Epoch = 9 /50 Loss = 0.016
+Epoch = 10/50 Loss = 0.014
+Epoch = 15/50 Loss = 0.011
+Epoch = 20/50 Loss = 0.011
+Epoch = 25/50 Loss = 0.0076
+Epoch = 30/50 Loss = 0.0068
+Epoch = 35/50 Loss = 0.0061
+Epoch = 40/50 Loss = 0.0059
+Epoch = 45/50 Loss = 0.0052
+Epoch = 50/50 Loss = 0.0049
 ```
 Few best examples of segmentation:
 
