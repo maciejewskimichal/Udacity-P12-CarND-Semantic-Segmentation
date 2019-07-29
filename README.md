@@ -4,7 +4,7 @@
 
 The goal of this project is running a semantic segmanatation neuronal network to **find on car camera video stream pixels belonging to the road**. This is done by taking a [VGG-16](http://www.robots.ox.ac.uk/~vgg/research/very_deep/) network and extend it to to fully connected convolutional network ([FCN-VGG16](https://people.eecs.berkeley.edu/~jonlong/long_shelhamer_fcn.pdf)).
 
-![Running demo FCN network](https://github.com/maciejewskimichal/Udacity-P12-CarND-Semantic-Segmentation/blob/master/runs/1564348540.6561623_ep_20_prob_0.5_lrate_0.0001_stddev_0.01_loss_0.00346907/output.gif)
+![Running demo FCN network](https://github.com/maciejewskimichal/Udacity-P12-CarND-Semantic-Segmentation/blob/master/runs/ep_50_prob_0.5_lrate_0.0001_stddev_0.01_loss_0.0049/output.gif)
 
 This network has added skip connection to resolve better details and it looks like:
 
@@ -21,14 +21,15 @@ layer3_out       = tf.get_default_graph().get_tensor_by_name('layer3_out:0' )
 layer4_out       = tf.get_default_graph().get_tensor_by_name('layer4_out:0' )
 layer7_out       = tf.get_default_graph().get_tensor_by_name('layer7_out:0' )
 
-ker_init         = tf.truncated_normal_initializer(stddev=0.01)
-
-layer7_conv      = tf.layers.conv2d(          layer7_out                       , num_classes, 1   , padding='same', kernel_initializer=ker_init)
-layer7_deconv    = tf.layers.conv2d_transpose(layer7_conv                      , num_classes, 4, 2, padding='same', kernel_initializer=ker_init)
-layer4_conv      = tf.layers.conv2d(          layer4_out                       , num_classes, 1   , padding='same', kernel_initializer=ker_init)
-layer4_deconv    = tf.layers.conv2d_transpose(tf.add(layer7_deconv,layer4_conv), num_classes, 4, 2, padding='same', kernel_initializer=ker_init)
-layer3_conv      = tf.layers.conv2d(          layer3_out                       , num_classes, 1   , padding='same', kernel_initializer=ker_init)
-layer_out_deconv = tf.layers.conv2d_transpose(tf.add(layer4_deconv,layer3_conv), num_classes,16, 8, padding='same', kernel_initializer=ker_init)
+    kern_init = tf.truncated_normal_initializer(stddev=0.01)
+    # regularizer added in later version
+    kern_reg  = tf.contrib.layers.l2_regularizer(1e-3)
+    layer7_conv      = tf.layers.conv2d(          vgg_layer7_out                   , num_classes, 1   , padding='same', kernel_initializer=kern_init, kernel_regularizer=kern_reg)
+    layer7_deconv    = tf.layers.conv2d_transpose(layer7_conv                      , num_classes, 4, 2, padding='same', kernel_initializer=kern_init, kernel_regularizer=kern_reg)
+    layer4_conv      = tf.layers.conv2d(          vgg_layer4_out                   , num_classes, 1   , padding='same', kernel_initializer=kern_init, kernel_regularizer=kern_reg)
+    layer4_deconv    = tf.layers.conv2d_transpose(tf.add(layer7_deconv,layer4_conv), num_classes, 4, 2, padding='same', kernel_initializer=kern_init, kernel_regularizer=kern_reg)
+    layer3_conv      = tf.layers.conv2d(          vgg_layer3_out                   , num_classes, 1   , padding='same', kernel_initializer=kern_init, kernel_regularizer=kern_reg)
+    layer_out        = tf.layers.conv2d_transpose(tf.add(layer4_deconv,layer3_conv), num_classes,16, 8, padding='same', kernel_initializer=kern_init, kernel_regularizer=kern_reg)
 ```
 
 It was run with *AdamOptimizer*.
@@ -37,13 +38,16 @@ It was run with *AdamOptimizer*.
 
 Network was trained with [Kitti Road dataset](http://www.cvlibs.net/datasets/kitti/eval_road.php) on Udacity VM with NVIDIA K80 GPU.
 
-Best fit parameters were set to:
+##First run
+
+Best fit first run parameters were set to:
 ```python
 epochs            = 20
 batch_size        = 16
 keep_prob_val     = 0.5
 learning_rate_val = 0.0001
 truncated_normal_stddev=0.01
+regularizer not used
 
 Epoch = 1 /20 Loss = 0.0313111
 Epoch = 2 /20 Loss = 0.0239016
@@ -66,15 +70,64 @@ Epoch = 18/20 Loss = 0.00407425
 Epoch = 19/20 Loss = 0.00355994
 Epoch = 20/20 Loss = 0.00346907
 ```
+Some examples of segmentation:
+
+![Best1](https://github.com/maciejewskimichal/Udacity-P12-CarND-Semantic-Segmentation/tree/master/runs/ep_20_prob_0.5_lrate_0.0001_stddev_0.01_loss_0.0037/uu_000026.png)
+
+![Best2](https://github.com/maciejewskimichal/Udacity-P12-CarND-Semantic-Segmentation/tree/master/runs/ep_20_prob_0.5_lrate_0.0001_stddev_0.01_loss_0.0037/uu_000093.png)
+
+![Best3](https://github.com/maciejewskimichal/Udacity-P12-CarND-Semantic-Segmentation/tree/master/runs/ep_20_prob_0.5_lrate_0.0001_stddev_0.01_loss_0.0037/um_000081.png)
+
+![Best4](https://github.com/maciejewskimichal/Udacity-P12-CarND-Semantic-Segmentation/tree/master/runs/ep_20_prob_0.5_lrate_0.0001_stddev_0.01_loss_0.0037/umm_000009.png)
+
+![Best5](https://github.com/maciejewskimichal/Udacity-P12-CarND-Semantic-Segmentation/tree/master/runs/ep_20_prob_0.5_lrate_0.0001_stddev_0.01_loss_0.0037/umm_000025.png)
+
+![Best6](https://github.com/maciejewskimichal/Udacity-P12-CarND-Semantic-Segmentation/tree/master/runs/ep_20_prob_0.5_lrate_0.0001_stddev_0.01_loss_0.0037/umm_000029.png)
+
+
+##Seocnd optimized run
+
+Best fit first run parameters were set to:
+```python
+epochs            = 50
+batch_size        = 4
+keep_prob_val     = 0.5
+learning_rate_val = 0.0001
+truncated_normal_stddev=0.01
+regularizer used
+
+Epoch = 1 /50 Loss = 0.126532
+Epoch = 2 /50 Loss = 0.0387358
+Epoch = 3 /50 Loss = 0.0336458
+Epoch = 4 /50 Loss = 0.0266071
+Epoch = 5 /50 Loss = 0.0225733
+Epoch = 6 /50 Loss = 0.0208974
+Epoch = 7 /50 Loss = 0.0181564
+Epoch = 8 /50 Loss = 0.0153333
+Epoch = 9 /50 Loss = 0.0161906
+Epoch = 10/50 Loss = 0.0143521
+Epoch = 15/50 Loss = 0.0106265
+Epoch = 20/50 Loss = 0.010997
+Epoch = 25/50 Loss = 0.00765995
+Epoch = 30/50 Loss = 0.00681202
+Epoch = 35/50 Loss = 0.00614292
+Epoch = 40/50 Loss = 0.00591604
+Epoch = 45/50 Loss = 0.00526914
+Epoch = 50/50 Loss = 0.00486118
+```
 Few best examples of segmentation:
 
-![Best1](https://github.com/maciejewskimichal/Udacity-P12-CarND-Semantic-Segmentation/blob/master/runs/1564348540.6561623_ep_20_prob_0.5_lrate_0.0001_stddev_0.01_loss_0.00346907/um_000081.png)
+![Best1](https://github.com/maciejewskimichal/Udacity-P12-CarND-Semantic-Segmentation/tree/master/runs/ep_50_prob_0.5_lrate_0.0001_stddev_0.01_loss_0.0049/uu_000026.png)
 
-![Best2](https://github.com/maciejewskimichal/Udacity-P12-CarND-Semantic-Segmentation/blob/master/runs/1564348540.6561623_ep_20_prob_0.5_lrate_0.0001_stddev_0.01_loss_0.00346907/umm_000009.png)
+![Best2](https://github.com/maciejewskimichal/Udacity-P12-CarND-Semantic-Segmentation/tree/master/runs/ep_50_prob_0.5_lrate_0.0001_stddev_0.01_loss_0.0049/uu_000093.png)
 
-![Best3](https://github.com/maciejewskimichal/Udacity-P12-CarND-Semantic-Segmentation/blob/master/runs/1564348540.6561623_ep_20_prob_0.5_lrate_0.0001_stddev_0.01_loss_0.00346907/umm_000025.png)
+![Best3](https://github.com/maciejewskimichal/Udacity-P12-CarND-Semantic-Segmentation/tree/master/runs/ep_50_prob_0.5_lrate_0.0001_stddev_0.01_loss_0.0049/um_000081.png)
 
-![Best3](https://github.com/maciejewskimichal/Udacity-P12-CarND-Semantic-Segmentation/blob/master/runs/1564348540.6561623_ep_20_prob_0.5_lrate_0.0001_stddev_0.01_loss_0.00346907/umm_000029.png)
+![Best4](https://github.com/maciejewskimichal/Udacity-P12-CarND-Semantic-Segmentation/tree/master/runs/ep_50_prob_0.5_lrate_0.0001_stddev_0.01_loss_0.0049/umm_000009.png)
+
+![Best5](https://github.com/maciejewskimichal/Udacity-P12-CarND-Semantic-Segmentation/tree/master/runs/ep_50_prob_0.5_lrate_0.0001_stddev_0.01_loss_0.0049/umm_000025.png)
+
+![Best6](https://github.com/maciejewskimichal/Udacity-P12-CarND-Semantic-Segmentation/tree/master/runs/ep_50_prob_0.5_lrate_0.0001_stddev_0.01_loss_0.0049/umm_000029.png)
 
 
 # Project setup
