@@ -1,7 +1,83 @@
-# Semantic Segmentation
-### Introduction
-In this project, you'll label the pixels of a road in images using a Fully Convolutional Network (FCN).
+# CarND-Semantic-Segmentation
 
+[Self-Driving Car Engineer Nanodegree Program Term 3 Project 12](https://eu.udacity.com/course/self-driving-car-engineer-nanodegree--nd013)
+
+The goal of this project is running a semantic segmanatation neuronal network to **find on car camera video stream pixels belonging to the road**. This is done by taking a [VGG-16](http://www.robots.ox.ac.uk/~vgg/research/very_deep/) network and extend it to to fully connected convolutional network ([FCN-VGG16](https://people.eecs.berkeley.edu/~jonlong/long_shelhamer_fcn.pdf)).
+
+![Running demo FCN network](https://github.com/maciejewskimichal/Udacity-P12-CarND-Semantic-Segmentation/blob/master/runs/1564348540.6561623_ep_20_prob_0.5_lrate_0.0001_stddev_0.01_loss_0.00346907/output.gif)
+
+This network has added skip connection to resolve better details and it looks like:
+
+![FCN network with skip connections](https://github.com/maciejewskimichal/Udacity-P12-CarND-Semantic-Segmentation/blob/master/images/network_with_skip_conn.png)
+
+In practice network is created by following code:
+
+```python
+model            = tf.saved_model.loader.load(sess, ['vgg16'], vgg_path)
+
+image_input      = tf.get_default_graph().get_tensor_by_name('image_input:0')
+keep_prob        = tf.get_default_graph().get_tensor_by_name('keep_prob:0'  )
+layer3_out       = tf.get_default_graph().get_tensor_by_name('layer3_out:0' )
+layer4_out       = tf.get_default_graph().get_tensor_by_name('layer4_out:0' )
+layer7_out       = tf.get_default_graph().get_tensor_by_name('layer7_out:0' )
+
+ker_init         = tf.truncated_normal_initializer(stddev=0.01)
+
+layer7_conv      = tf.layers.conv2d(          layer7_out                       , num_classes, 1   , padding='same', kernel_initializer=ker_init)
+layer7_deconv    = tf.layers.conv2d_transpose(layer7_conv                      , num_classes, 4, 2, padding='same', kernel_initializer=ker_init)
+layer4_conv      = tf.layers.conv2d(          layer4_out                       , num_classes, 1   , padding='same', kernel_initializer=ker_init)
+layer4_deconv    = tf.layers.conv2d_transpose(tf.add(layer7_deconv,layer4_conv), num_classes, 4, 2, padding='same', kernel_initializer=ker_init)
+layer3_conv      = tf.layers.conv2d(          layer3_out                       , num_classes, 1   , padding='same', kernel_initializer=ker_init)
+layer_out_deconv = tf.layers.conv2d_transpose(tf.add(layer4_deconv,layer3_conv), num_classes,16, 8, padding='same', kernel_initializer=ker_init)
+```
+
+It was run with *AdamOptimizer*.
+
+# Best parameters
+
+Network was trained with [Kitti Road dataset](http://www.cvlibs.net/datasets/kitti/eval_road.php) on Udacity VM with NVIDIA K80 GPU.
+
+Best fit parameters were set to:
+```python
+epochs            = 20
+batch_size        = 16
+keep_prob_val     = 0.5
+learning_rate_val = 0.0001
+truncated_normal_stddev=0.01
+
+Epoch = 1 /20 Loss = 0.0313111
+Epoch = 2 /20 Loss = 0.0239016
+Epoch = 3 /20 Loss = 0.0212975
+Epoch = 4 /20 Loss = 0.0165934
+Epoch = 5 /20 Loss = 0.0113107
+Epoch = 6 /20 Loss = 0.00814866
+Epoch = 7 /20 Loss = 0.00651643
+Epoch = 8 /20 Loss = 0.00672304
+Epoch = 9 /20 Loss = 0.00592527
+Epoch = 10/20 Loss = 0.00547108
+Epoch = 11/20 Loss = 0.00471787
+Epoch = 12/20 Loss = 0.00475233
+Epoch = 13/20 Loss = 0.00479306
+Epoch = 14/20 Loss = 0.00399876
+Epoch = 15/20 Loss = 0.00388238
+Epoch = 16/20 Loss = 0.00381149
+Epoch = 17/20 Loss = 0.0042731
+Epoch = 18/20 Loss = 0.00407425
+Epoch = 19/20 Loss = 0.00355994
+Epoch = 20/20 Loss = 0.00346907
+```
+Few best examples of segmentation:
+
+![Best1](https://github.com/maciejewskimichal/Udacity-P12-CarND-Semantic-Segmentation/blob/master/runs/1564348540.6561623_ep_20_prob_0.5_lrate_0.0001_stddev_0.01_loss_0.00346907/um_000081.png)
+
+![Best2](https://github.com/maciejewskimichal/Udacity-P12-CarND-Semantic-Segmentation/blob/master/runs/1564348540.6561623_ep_20_prob_0.5_lrate_0.0001_stddev_0.01_loss_0.00346907/umm_000009.png)
+
+![Best3](https://github.com/maciejewskimichal/Udacity-P12-CarND-Semantic-Segmentation/blob/master/runs/1564348540.6561623_ep_20_prob_0.5_lrate_0.0001_stddev_0.01_loss_0.00346907/umm_000025.png)
+
+![Best3](https://github.com/maciejewskimichal/Udacity-P12-CarND-Semantic-Segmentation/blob/master/runs/1564348540.6561623_ep_20_prob_0.5_lrate_0.0001_stddev_0.01_loss_0.00346907/umm_000029.png)
+
+
+# Project setup
 ### Setup
 ##### GPU
 `main.py` will check to make sure you are using GPU - if you don't have a GPU on your system, you can use AWS or another cloud computing platform.
