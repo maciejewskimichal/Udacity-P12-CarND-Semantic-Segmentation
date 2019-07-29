@@ -38,7 +38,7 @@ It was run with *AdamOptimizer*.
 
 Network was trained with [Kitti Road dataset](http://www.cvlibs.net/datasets/kitti/eval_road.php) on Udacity VM with NVIDIA K80 GPU.
 
-##First run
+## First run
 
 Best fit first run parameters were set to:
 ```python
@@ -85,7 +85,7 @@ Some examples of segmentation:
 ![Best6](https://github.com/maciejewskimichal/Udacity-P12-CarND-Semantic-Segmentation/blob/master/runs/ep_20_prob_0.5_lrate_0.0001_stddev_0.01_loss_0.0037/umm_000029.png)
 
 
-##Seocnd optimized run
+## Second optimized run
 
 Best fit first run parameters were set to:
 ```python
