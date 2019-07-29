@@ -72,17 +72,17 @@ Epoch = 20/20 Loss = 0.00346907
 ```
 Some examples of segmentation:
 
-![Best1](https://github.com/maciejewskimichal/Udacity-P12-CarND-Semantic-Segmentation/tree/master/runs/ep_20_prob_0.5_lrate_0.0001_stddev_0.01_loss_0.0037/uu_000026.png)
+![Best1](https://github.com/maciejewskimichal/Udacity-P12-CarND-Semantic-Segmentation/blob/master/runs/ep_20_prob_0.5_lrate_0.0001_stddev_0.01_loss_0.0037/uu_000026.png)
 
-![Best2](https://github.com/maciejewskimichal/Udacity-P12-CarND-Semantic-Segmentation/tree/master/runs/ep_20_prob_0.5_lrate_0.0001_stddev_0.01_loss_0.0037/uu_000093.png)
+![Best2](https://github.com/maciejewskimichal/Udacity-P12-CarND-Semantic-Segmentation/blob/master/runs/ep_20_prob_0.5_lrate_0.0001_stddev_0.01_loss_0.0037/uu_000093.png)
 
-![Best3](https://github.com/maciejewskimichal/Udacity-P12-CarND-Semantic-Segmentation/tree/master/runs/ep_20_prob_0.5_lrate_0.0001_stddev_0.01_loss_0.0037/um_000081.png)
+![Best3](https://github.com/maciejewskimichal/Udacity-P12-CarND-Semantic-Segmentation/blob/master/runs/ep_20_prob_0.5_lrate_0.0001_stddev_0.01_loss_0.0037/um_000081.png)
 
-![Best4](https://github.com/maciejewskimichal/Udacity-P12-CarND-Semantic-Segmentation/tree/master/runs/ep_20_prob_0.5_lrate_0.0001_stddev_0.01_loss_0.0037/umm_000009.png)
+![Best4](https://github.com/maciejewskimichal/Udacity-P12-CarND-Semantic-Segmentation/blob/master/runs/ep_20_prob_0.5_lrate_0.0001_stddev_0.01_loss_0.0037/umm_000009.png)
 
-![Best5](https://github.com/maciejewskimichal/Udacity-P12-CarND-Semantic-Segmentation/tree/master/runs/ep_20_prob_0.5_lrate_0.0001_stddev_0.01_loss_0.0037/umm_000025.png)
+![Best5](https://github.com/maciejewskimichal/Udacity-P12-CarND-Semantic-Segmentation/blob/master/runs/ep_20_prob_0.5_lrate_0.0001_stddev_0.01_loss_0.0037/umm_000025.png)
 
-![Best6](https://github.com/maciejewskimichal/Udacity-P12-CarND-Semantic-Segmentation/tree/master/runs/ep_20_prob_0.5_lrate_0.0001_stddev_0.01_loss_0.0037/umm_000029.png)
+![Best6](https://github.com/maciejewskimichal/Udacity-P12-CarND-Semantic-Segmentation/blob/master/runs/ep_20_prob_0.5_lrate_0.0001_stddev_0.01_loss_0.0037/umm_000029.png)
 
 
 ##Seocnd optimized run
@@ -117,17 +117,17 @@ Epoch = 50/50 Loss = 0.00486118
 ```
 Few best examples of segmentation:
 
-![Best1](https://github.com/maciejewskimichal/Udacity-P12-CarND-Semantic-Segmentation/tree/master/runs/ep_50_prob_0.5_lrate_0.0001_stddev_0.01_loss_0.0049/uu_000026.png)
+![Best1](https://github.com/maciejewskimichal/Udacity-P12-CarND-Semantic-Segmentation/blob/master/runs/ep_50_prob_0.5_lrate_0.0001_stddev_0.01_loss_0.0049/uu_000026.png)
 
-![Best2](https://github.com/maciejewskimichal/Udacity-P12-CarND-Semantic-Segmentation/tree/master/runs/ep_50_prob_0.5_lrate_0.0001_stddev_0.01_loss_0.0049/uu_000093.png)
+![Best2](https://github.com/maciejewskimichal/Udacity-P12-CarND-Semantic-Segmentation/blob/master/runs/ep_50_prob_0.5_lrate_0.0001_stddev_0.01_loss_0.0049/uu_000093.png)
 
-![Best3](https://github.com/maciejewskimichal/Udacity-P12-CarND-Semantic-Segmentation/tree/master/runs/ep_50_prob_0.5_lrate_0.0001_stddev_0.01_loss_0.0049/um_000081.png)
+![Best3](https://github.com/maciejewskimichal/Udacity-P12-CarND-Semantic-Segmentation/blob/master/runs/ep_50_prob_0.5_lrate_0.0001_stddev_0.01_loss_0.0049/um_000081.png)
 
-![Best4](https://github.com/maciejewskimichal/Udacity-P12-CarND-Semantic-Segmentation/tree/master/runs/ep_50_prob_0.5_lrate_0.0001_stddev_0.01_loss_0.0049/umm_000009.png)
+![Best4](https://github.com/maciejewskimichal/Udacity-P12-CarND-Semantic-Segmentation/blob/master/runs/ep_50_prob_0.5_lrate_0.0001_stddev_0.01_loss_0.0049/umm_000009.png)
 
-![Best5](https://github.com/maciejewskimichal/Udacity-P12-CarND-Semantic-Segmentation/tree/master/runs/ep_50_prob_0.5_lrate_0.0001_stddev_0.01_loss_0.0049/umm_000025.png)
+![Best5](https://github.com/maciejewskimichal/Udacity-P12-CarND-Semantic-Segmentation/blob/master/runs/ep_50_prob_0.5_lrate_0.0001_stddev_0.01_loss_0.0049/umm_000025.png)
 
-![Best6](https://github.com/maciejewskimichal/Udacity-P12-CarND-Semantic-Segmentation/tree/master/runs/ep_50_prob_0.5_lrate_0.0001_stddev_0.01_loss_0.0049/umm_000029.png)
+![Best6](https://github.com/maciejewskimichal/Udacity-P12-CarND-Semantic-Segmentation/blob/master/runs/ep_50_prob_0.5_lrate_0.0001_stddev_0.01_loss_0.0049/umm_000029.png)
 
 
 # Project setup
